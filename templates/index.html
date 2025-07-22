@@ -1,28 +1,83 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Machine Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <title>Machine Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <header>
-        <h1>Machine Dashboard</h1>
-        <nav class="navbar">
-            <a href="/">🏠 Tableau de bord</a>
-            <a href="/pizzas">🍕 Pizzas</a>
-            <a href="/temperatures">🌡️ Températures</a>
-            <a href="/stats">📊 Statistiques</a>
-            <a href="/maintenance">🛠️ Maintenance</a>
-            <a href="/settings">⚙️ Réglages</a>
-        </nav>
-    </header>
+  <header>
+    <h1>Machine Dashboard</h1>
+    <nav>
+      <a href="/">🏠 Tableau de bord</a>
+      <a href="/pizzas">🍕 Pizzas</a>
+      <a href="/temperatures">🌡️ Températures</a>
+      <a href="/stats">📊 Statistiques</a>
+      <a href="/maintenance">🛠️ Maintenance</a>
+      <a href="/settings">⚙️ Réglages</a>
+    </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>Index</h2>
-            <p>Bienvenue sur le tableau de bord. Sélectionnez une section dans le menu ci-dessus.</p>
-        </section>
-    </main>
+  <main>
+    <h2>Index</h2>
+    <p>Bienvenue sur le tableau de bord. Sélectionnez une section dans le menu ci-dessus.</p>
+
+    <!-- 🌡️ Températures -->
+    <section class="card">
+      <h3>🌡️ Températures</h3>
+      <ul>
+        <li><strong>Four haut :</strong> 177 °C</li>
+        <li><strong>Four bas :</strong> 172.9 °C</li>
+        <li><strong>Frigo :</strong> 3.5 °C</li>
+      </ul>
+    </section>
+
+    <!-- 📊 Statistiques -->
+    <section class="card">
+      <h3>📊 Statistiques</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Période</th>
+            <th>Ventes</th>
+            <th>Total (€)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Aujourd'hui</td><td>2</td><td>17.00</td></tr>
+          <tr><td>Même jour, la semaine dernière</td><td>26</td><td>266.00</td></tr>
+          <tr><td>Hier</td><td>45</td><td>458.50</td></tr>
+          <tr><td>Cette semaine</td><td>83</td><td>828.00</td></tr>
+          <tr><td>Ce mois</td><td>1192</td><td>12091.50</td></tr>
+          <tr><td><strong>Meilleur jour (31/05/2025)</strong></td><td>95</td><td>966.00</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 🍕 Pizzas en stock -->
+    <section class="card">
+      <h3>🍕 État des Pizzas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Pizza</th>
+            <th>En stock</th>
+            <th>Périmées</th>
+            <th>Bloquées</th>
+            <th>Réservées</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Reine</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>Margarita</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>Vesuvio</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>4 Fromages</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>Jambon Chorizo</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>Paysanne</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>Forestière</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 </body>
 </html>
