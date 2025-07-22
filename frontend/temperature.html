@@ -4,29 +4,67 @@
   <meta charset="UTF-8">
   <title>Températures</title>
   <style>
-    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
-    h1 { color: #C0392B; }
-    .temp-box { background: white; padding: 15px; border-radius: 5px; border-left: 5px solid #C0392B; }
-    .temp-box p { font-size: 18px; margin: 8px 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #00698f;
+      color: white;
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .box {
+      background-color: #e6f7ff;
+      border-left: 5px solid #1890ff;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .box h3 {
+      margin-top: 0;
+    }
+    .temp-red {
+      color: red;
+      font-weight: bold;
+    }
+    .temp-blue {
+      color: #007fff;
+      font-weight: bold;
+    }
+    a {
+      color: #00698f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h1>Températures machine</h1>
-  <div class="temp-box">
-    <p>🔥 Four haut : <span id="top"></span> °C</p>
-    <p>🔥 Four bas : <span id="bottom"></span> °C</p>
-    <p>❄️ Frigo : <span id="fridge"></span> °C</p>
+
+<header>
+  Températures des équipements
+</header>
+
+<div class="container">
+  <div class="box">
+    <h3>Four</h3>
+    🔥 Température haute : <span class="temp-red">284.7°C</span><br>
+    🔥 Température basse : <span class="temp-red">296.4°C</span>
   </div>
 
-  <script>
-    fetch("https://machine-dashboard-8a68.onrender.com/temperature")
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("top").textContent = data.top;
-        document.getElementById("bottom").textContent = data.bottom;
-        document.getElementById("fridge").textContent = data.fridge;
-      })
-      .catch(err => console.error("Erreur température:", err));
-  </script>
+  <div class="box">
+    <h3>Frigo</h3>
+    ❄️ Température : <span class="temp-blue">4.2°C</span>
+  </div>
+
+  <a href="index.html">← Retour au tableau de bord</a>
+</div>
+
 </body>
 </html>
