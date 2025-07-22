@@ -1,5 +1,5 @@
 import json
-from .main import Log
+from main import Log
 
 LOG_FILE = "logs.json"
 logs = []
