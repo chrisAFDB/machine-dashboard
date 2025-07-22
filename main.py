@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
 from database import logs, save_log
+from models import Log
 
 app = FastAPI()
 
