@@ -1,62 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Machine Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Smart Machine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #00698f;
+      color: white;
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+    nav {
+      background-color: #007ca8;
+      display: flex;
+      flex-direction: column;
+    }
+    nav a {
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+      border-bottom: 1px solid #005c80;
+    }
+    nav a:hover {
+      background-color: #005c80;
+    }
+    .content {
+      padding: 20px;
+    }
+    .status {
+      margin-top: 20px;
+      background: #d9edf7;
+      padding: 10px;
+      border-left: 5px solid #31708f;
+    }
+  </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h2>SmartDashboard</h2>
-    <ul>
-      <li onclick="showSection('dashboard')">📊 Tableau de bord</li>
-      <li onclick="showSection('machines')">🖥 Machines</li>
-      <li onclick="showSection('products')">🍕 Produits</li>
-      <li onclick="showSection('temps')">🌡 Températures</li>
-      <li onclick="showSection('stats')">📈 Statistiques</li>
-      <li onclick="showSection('logs')">🗒 Journaux</li>
-      <li onclick="showSection('maintenance')">🛠 Maintenance</li>
-    </ul>
+
+<header>
+  Smart Pizza - Tableau de bord
+</header>
+
+<nav>
+  <a href="temperature.html">Températures</a>
+  <a href="stats.html">Statistiques</a>
+  <a href="lockers.html">Casiers</a>
+  <a href="slots.html">Plages horaires</a>
+  <a href="maintenance.html">Maintenance</a>
+</nav>
+
+<div class="content">
+  <h2>Bienvenue sur le tableau de bord</h2>
+  <p>Utilisez le menu pour accéder aux différentes fonctionnalités.</p>
+
+  <div class="status">
+    <strong>Qualité des services :</strong><br/>
+    🟢 ATWeb<br/>
+    🟢 Synchronisation<br/>
+    🟢 Application
   </div>
+</div>
 
-  <div class="main">
-    <div id="dashboard" class="section">
-      <h1>📊 Tableau de bord</h1>
-      <div id="summary-cards"></div>
-    </div>
-
-    <div id="machines" class="section hidden">
-      <h1>🖥 Machines</h1>
-      <div id="machine-list"></div>
-    </div>
-
-    <div id="products" class="section hidden">
-      <h1>🍕 Produits</h1>
-      <div id="product-table"></div>
-    </div>
-
-    <div id="temps" class="section hidden">
-      <h1>🌡 Températures</h1>
-      <div id="temps-values"></div>
-    </div>
-
-    <div id="stats" class="section hidden">
-      <h1>📈 Statistiques</h1>
-      <div id="stats-panel"></div>
-    </div>
-
-    <div id="logs" class="section hidden">
-      <h1>🗒 Journaux</h1>
-      <div id="logs-container"></div>
-    </div>
-
-    <div id="maintenance" class="section hidden">
-      <h1>🛠 Maintenance</h1>
-      <div id="maintenance-info"></div>
-    </div>
-  </div>
-
-  <script src="dashboard.js"></script>
 </body>
 </html>
