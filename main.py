@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory, jsonify
 import os
 
-app = Flask(__name__, static_folder='template')
+app = Flask(__name__, static_folder='templates')
 
 # Route principale (serve index.html)
 @app.route('/')
