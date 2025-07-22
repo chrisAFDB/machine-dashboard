@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Températures</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    h1 { color: #C0392B; }
+    .temp-box { background: white; padding: 15px; border-radius: 5px; border-left: 5px solid #C0392B; }
+    .temp-box p { font-size: 18px; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <h1>Températures machine</h1>
+  <div class="temp-box">
+    <p>🔥 Four haut : <span id="top"></span> °C</p>
+    <p>🔥 Four bas : <span id="bottom"></span> °C</p>
+    <p>❄️ Frigo : <span id="fridge"></span> °C</p>
+  </div>
+
+  <script>
+    fetch("https://machine-dashboard-8a68.onrender.com/temperature")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("top").textContent = data.top;
+        document.getElementById("bottom").textContent = data.bottom;
+        document.getElementById("fridge").textContent = data.fridge;
+      })
+      .catch(err => console.error("Erreur température:", err));
+  </script>
+</body>
+</html>
