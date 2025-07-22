@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>SmartDashboard</h2>
+    <ul>
+      <li onclick="showSection('dashboard')">📊 Tableau de bord</li>
+      <li onclick="showSection('machines')">🖥 Machines</li>
+      <li onclick="showSection('products')">🍕 Produits</li>
+      <li onclick="showSection('temps')">🌡 Températures</li>
+      <li onclick="showSection('stats')">📈 Statistiques</li>
+      <li onclick="showSection('logs')">🗒 Journaux</li>
+      <li onclick="showSection('maintenance')">🛠 Maintenance</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div id="dashboard" class="section">
+      <h1>📊 Tableau de bord</h1>
+      <div id="summary-cards"></div>
+    </div>
+
+    <div id="machines" class="section hidden">
+      <h1>🖥 Machines</h1>
+      <div id="machine-list"></div>
+    </div>
+
+    <div id="products" class="section hidden">
+      <h1>🍕 Produits</h1>
+      <div id="product-table"></div>
+    </div>
+
+    <div id="temps" class="section hidden">
+      <h1>🌡 Températures</h1>
+      <div id="temps-values"></div>
+    </div>
+
+    <div id="stats" class="section hidden">
+      <h1>📈 Statistiques</h1>
+      <div id="stats-panel"></div>
+    </div>
+
+    <div id="logs" class="section hidden">
+      <h1>🗒 Journaux</h1>
+      <div id="logs-container"></div>
+    </div>
+
+    <div id="maintenance" class="section hidden">
+      <h1>🛠 Maintenance</h1>
+      <div id="maintenance-info"></div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
