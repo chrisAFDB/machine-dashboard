@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Distributeur</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; background: #f9f9f9; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+    th { background: #eee; }
+  </style>
+</head>
+<body>
+  <h1>📊 Historique des Logs</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Horodatage</th>
+        <th>Type</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody id="logTable"></tbody>
+  </table>
+
+  <script>
+    async function fetchLogs() {
+      const res = await fetch('/logs');
+      const logs = await res.json();
+      const table = document.getElementById('logTable');
+      table.innerHTML = '';
+      logs.reverse().forEach(log => {
+        const row = `<tr>
+          <td>${log.timestamp}</td>
+          <td>${log.type}</td>
+          <td>${log.message}</td>
+        </tr>`;
+        table.innerHTML += row;
+      });
+    }
+    fetchLogs();
+    setInterval(fetchLogs, 5000);
+  </script>
+</body>
+</html>
