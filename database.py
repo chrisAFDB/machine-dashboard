@@ -1,5 +1,4 @@
 import json
-from database import logs, save_log
 from models import Log
 LOG_FILE = "logs.json"
 logs = []
