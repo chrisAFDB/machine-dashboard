@@ -1,23 +1,13 @@
 from flask import Flask, render_template
-import os
 
-app = Flask(__name__, static_folder='templates')
+# Création de l'application Flask
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
-# Route principale (serve index.html)
+# Route principale qui affiche le tableau de bord
 @app.route('/')
 def index():
-    return send_from_directory(app.static_folder, 'index.html')
+    return render_template('index.html')
 
-# Route pour servir tous les fichiers statiques (HTML, CSS, JS)
-@app.route('/<path:path>')
-def serve_file(path):
-    return send_from_directory(app.static_folder, path)
-
-# Exemple de route API
-@app.route('/api')
-def api_info():
-    return jsonify({"message": "Machine Dashboard API"})
-
+# Point d'entrée de l'application
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=10000)
