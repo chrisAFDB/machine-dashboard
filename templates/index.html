@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Index | Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Machine Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <h1>Machine Dashboard</h1>
-      <nav>
-        <a href="index.html">🏠 Tableau de bord</a>
-        <a href="pizzas.html">🍕 Pizzas</a>
-        <a href="temperatures.html">🌡️ Températures</a>
-        <a href="stats.html">📊 Statistiques</a>
-        <a href="maintenance.html">🛠 Maintenance</a>
-        <a href="settings.html">⚙️ Réglages</a>
-      </nav>
-    </aside>
-    <main class="content">
-      <h2>Index</h2>
-      <p>Bienvenue sur le tableau de bord. Sélectionnez une section dans le menu à gauche.</p>
+    <header>
+        <h1>Machine Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="/">🏠 Tableau de bord</a></li>
+                <li><a href="/pizzas">🍕 Pizzas</a></li>
+                <li><a href="/temperatures">🌡️ Températures</a></li>
+                <li><a href="/stats">📊 Statistiques</a></li>
+                <li><a href="/maintenance">🛠️ Maintenance</a></li>
+                <li><a href="/settings">⚙️ Réglages</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Index</h2>
+        <p>Bienvenue sur le tableau de bord. Sélectionnez une section dans le menu ci-dessus.</p>
     </main>
-  </div>
 </body>
 </html>
